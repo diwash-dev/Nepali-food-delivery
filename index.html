@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NepBhoj – Authentic Nepali Food Delivered Fast</title>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🍲%3C/text%3E%3C/svg%3E"
+      type="image/svg+xml"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="loader">
+      <div class="loader-inner">
+        <div class="loader-logo">🍲 NepBhoj</div>
+        <div class="loader-bar"><div class="loader-fill"></div></div>
+      </div>
+    </div>
+
+    <div id="scroll-progress"></div>
+
+    <div id="float-notif" class="float-notif hidden">
+      <img src="https://i.pravatar.cc/40?img=12" alt="User" />
+      <div><strong>Diwash</strong> just ordered Momo! 🎉</div>
+      <button id="close-notif"><i class="fas fa-times"></i></button>
+    </div>
+
+    <nav id="navbar">
+      <div class="nav-container">
+        <!-- Logo -->
+        <a href="#" class="nav-logo">
+          <span class="logo-icon">🍲</span>
+          <span class="logo-text">NepBhoj</span>
+        </a>
+
+        <!-- Nav Links -->
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#menu" class="nav-link">Menu</a></li>
+          <li><a href="#restaurants" class="nav-link">Restaurants</a></li>
+          <li><a href="#offers" class="nav-link">Offers</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- Nav Actions -->
+        <div class="nav-actions">
+          <button class="nav-icon-btn" id="search-toggle" aria-label="Search">
+            <i class="fas fa-search"></i>
+          </button>
+          <button class="nav-icon-btn cart-btn" aria-label="Cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-badge" id="cart-count">0</span>
+          </button>
+        </div>
+
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="nav-search" id="nav-search">
+        <input
+          type="text"
+          placeholder="Search dishes like momo, sekuwa, dal bhat…"
+        />
+        <button><i class="fas fa-search"></i></button>
+      </div>
+    </nav>
+
+    <section id="home" class="hero">
+      <!-- Particles canvas -->
+      <canvas id="particles-canvas"></canvas>
+
+      <!-- Glow orbs -->
+      <div class="glow-orb glow-1"></div>
+      <div class="glow-orb glow-2"></div>
+      <div class="glow-orb glow-3"></div>
+
+      <div class="hero-container">
+        <div class="hero-content">
+          <!-- Badges -->
+          <div class="hero-badges">
+            <span class="badge badge-rating"
+              ><i class="fas fa-star"></i> 4.9 Rated</span
+            >
+            <span class="badge badge-time"
+              ><i class="fas fa-clock"></i> 30 Min Delivery</span
+            >
+            <span class="badge badge-happy"
+              ><i class="fas fa-heart"></i> 20K+ Happy Customers</span
+            >
+          </div>
+
+          <h1 class="hero-title">
+            Authentic <span class="gradient-text">Nepali Food</span
+            ><br />Delivered Fast
+          </h1>
+          <p class="hero-sub">
+            Craving momo, sekuwa, thakali set or chowmein? NepBhoj brings
+            Kathmandu's finest street flavours straight to your door — hot, fast
+            and always fresh.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="hero-cta">
+            <a href="#menu" class="btn-primary"
+              >Order Now <i class="fas fa-arrow-right"></i
+            ></a>
+            <a href="#menu" class="btn-outline">Explore Menu</a>
+          </div>
+        </div>
+
+        <!-- Hero Image / Floating Cards -->
+        <div class="hero-visual">
+          <div class="hero-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1682862279256-b2a9e4f3d22c?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Thakali Set"
+              class="hero-main-img"
+              loading="lazy"
+            />
+            <div class="float-card float-card-1">
+              <span>🍜</span>
+              <div>
+                <strong>Veg Chowmein</strong>
+                <small>⭐ 4.8</small>
+              </div>
+            </div>
+            <div class="float-card float-card-2">
+              <span>🛵</span>
+              <div>
+                <strong>30 Min</strong>
+                <small>Delivery</small>
+              </div>
+            </div>
+            <div class="float-card float-card-3">
+              <span>🎁</span>
+              <div>
+                <strong>40% OFF</strong>
+                <small>First Order</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="food-menu reveal-section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-tag">Most Loved</p>
+          <h2>Popular <span class="gradient-text">Dishes</span></h2>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all">All</button>
+          <button class="filter-tab" data-filter="nepali">Nepali</button>
+        </div>
+
+        <div class="food-grid" id="food-grid">
+          <!-- Food cards injected by JS -->
+        </div>
+      </div>
+    </section>
+
+    <section id="restaurants" class="restaurants reveal-section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-tag">Top Picks</p>
+          <h2>Best <span class="gradient-text">Restaurants</span> Near You</h2>
+        </div>
+        <div class="restaurant-grid" id="restaurant-grid">
+          <!-- Restaurant cards injected by JS -->
+        </div>
+      </div>
+    </section>
+
+    <section id="offers" class="offers reveal-section">
+      <div class="container">
+        <div class="offer-banner">
+          <div class="offer-glow"></div>
+          <div class="offer-content">
+            <p class="offer-tag">🔥 Limited Time Offer</p>
+            <h2>
+              Get <span class="gradient-text">40% OFF</span><br />on Your First
+              Order!
+            </h2>
+            <p class="offer-sub">
+              Use coupon code and enjoy authentic Nepali food at the best price.
+            </p>
+            <div class="countdown" id="countdown">
+              <div class="cd-block">
+                <span id="cd-h">00</span><small>Hours</small>
+              </div>
+              <div class="cd-sep">:</div>
+              <div class="cd-block">
+                <span id="cd-m">00</span><small>Mins</small>
+              </div>
+              <div class="cd-sep">:</div>
+              <div class="cd-block">
+                <span id="cd-s">00</span><small>Secs</small>
+              </div>
+            </div>
+            <div class="coupon-row">
+              <div class="coupon-code" id="coupon-code">NEPBHOJ40</div>
+              <button class="btn-copy" id="copy-coupon">
+                Copy Code <i class="fas fa-copy"></i>
+              </button>
+            </div>
+            <a href="#menu" class="btn-primary"
+              >Order Now <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+          <div class="offer-imgs">
+            <img
+              src="https://images.unsplash.com/photo-1622715395488-71045e2a4990?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Dal Bhat"
+              class="offer-img offer-img-1"
+              loading="lazy"
+            />
+            <img
+              src=" https://images.unsplash.com/photo-1671393002836-487b4cc61a9c?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Sekuwa"
+              class="offer-img offer-img-2"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="features reveal-section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-tag">Why Choose Us</p>
+          <h2>
+            Everything You Need, <span class="gradient-text">Delivered</span>
+          </h2>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon" style="--icon-clr: #ff6b00">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h3>Lightning Delivery</h3>
+            <p>
+              Get your food in under 30 minutes — or your next order is on us.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon" style="--icon-clr: #facc15">
+              <i class="fas fa-map-pin"></i>
+            </div>
+            <h3>Live Order Tracking</h3>
+            <p>
+              Watch your rider navigate to your door in real time on the map.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon" style="--icon-clr: #22d3ee">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Secure Payment</h3>
+            <p>
+              eSewa, Khalti, cards, or cash on delivery — always 100% secure.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon" style="--icon-clr: #4ade80">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3>Fresh Ingredients</h3>
+            <p>
+              Partner kitchens use locally sourced Nepali produce every day.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats reveal-section" id="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h3 class="counter" data-target="50000">0</h3>
+            <p>Orders Delivered</p>
+          </div>
+          <div class="stat-card">
+            <h3 class="counter" data-target="100">0</h3>
+            <p>Partner Restaurants</p>
+          </div>
+          <div class="stat-card">
+            <h3 class="counter" data-target="20000">0</h3>
+            <p>Happy Customers</p>
+          </div>
+          <div class="stat-card">
+            <h3>24/7</h3>
+            <p>Service Available</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="app-section reveal-section">
+      <div class="container">
+        <div class="app-inner">
+          <div class="app-content">
+            <p class="section-tag">Mobile App</p>
+            <h2>
+              Order Faster with the
+              <span class="gradient-text">NepBhoj App</span>
+            </h2>
+            <ul class="app-features">
+              <li>
+                <i class="fas fa-check-circle"></i> Real-time order tracking
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Exclusive app-only discounts
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Save favourite restaurants
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Quick reorder in one tap
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> eSewa & Khalti integrated
+              </li>
+            </ul>
+            <div class="app-btns">
+              <a href="#" class="store-btn">
+                <i class="fab fa-google-play"></i>
+                <div><small>Get it on</small><strong>Google Play</strong></div>
+              </a>
+              <a href="#" class="store-btn">
+                <i class="fab fa-apple"></i>
+                <div><small>Download on</small><strong>App Store</strong></div>
+              </a>
+            </div>
+          </div>
+          <div class="app-visual">
+            <div class="phone-mockup">
+              <div class="phone-screen">
+                <div class="phone-header">🍲 NepBhoj</div>
+                <div class="phone-food-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1622715395476-3dbcd161df05?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Momo App"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="phone-order-bar">
+                  <span>Buff Momo</span>
+                  <span class="phone-price">Rs. 180</span>
+                </div>
+                <div class="phone-btn">Add to Cart 🛒</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials reveal-section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-tag">Reviews</p>
+          <h2>What Our <span class="gradient-text">Customers Say</span></h2>
+        </div>
+        <div class="testimonial-slider" id="testimonial-slider">
+          <div class="testimonials-track" id="testimonials-track">
+            <!-- Testimonials injected by JS -->
+          </div>
+        </div>
+        <div class="slider-dots" id="slider-dots"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact reveal-section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-tag">Get In Touch</p>
+          <h2>Contact <span class="gradient-text">NepBhoj</span></h2>
+        </div>
+        <div class="contact-inner">
+          <!-- Contact Info -->
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-phone"></i></div>
+              <div>
+                <h4>Phone</h4>
+                <p>9800000000</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <h4>Address</h4>
+                <p>Nepalgunj, Banke</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <h4>Email</h4>
+                <p>hello@nepbhoj.com.np</p>
+              </div>
+            </div>
+            <div class="social-links">
+              <a href="#" class="social-link" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-link" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="social-link" aria-label="TikTok"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <form class="contact-form" id="contact-form">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" placeholder="your@email.com" required />
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea
+                placeholder="Tell us how we can help…"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn-primary">
+              Send Message <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Brand -->
+          <div class="footer-brand">
+            <div class="footer-logo">🍲 NepBhoj</div>
+            <p>
+              Bringing authentic Nepali flavours to your doorstep — fast, fresh,
+              and full of love.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-link" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-link" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="social-link" aria-label="TikTok"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#menu">Menu</a></li>
+              <li><a href="#restaurants">Restaurants</a></li>
+              <li><a href="#offers">Offers</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Categories -->
+          <div class="footer-col">
+            <h4>Food Categories</h4>
+            <ul>
+              <li><a href="#menu">Momo</a></li>
+              <li><a href="#menu">Chowmein</a></li>
+              <li><a href="#menu">Sekuwa</a></li>
+              <li><a href="#menu">Dal Bhat</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="footer-col">
+            <h4>Newsletter</h4>
+            <p>Get exclusive deals straight to your inbox.</p>
+            <div class="newsletter">
+              <input type="email" placeholder="your@email.com" />
+              <button><i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 NepBhoj. All Rights Reserved. Made with ❤️ in Nepal. <strong>Author: DIWASH</strong></p>
+          <div class="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Cart Toast -->
+    <div id="cart-toast" class="cart-toast hidden">
+      <i class="fas fa-check-circle"></i> Added to cart!
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+  </body>
+</html>
